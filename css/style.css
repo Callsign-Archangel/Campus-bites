@@ -427,7 +427,11 @@ a { color: var(--accent); text-decoration: none; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 600px) {
-  #navbar { padding: 0 16px; }
+  #navbar { padding: 0 14px; gap: 8px; }
+  .logo { font-size: 17px; white-space: nowrap; }
+  .nav-right { gap: 8px; }
+  .nav-meta { display: none; }
+  .cart-btn { padding: 8px 14px; font-size: 13px; white-space: nowrap; }
   .hero { padding: 44px 16px 32px; }
   .section { padding: 28px 16px; }
   .form-row { grid-template-columns: 1fr; }
