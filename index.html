@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Bites — College Food Ordering</title>
+  <meta name="description" content="Order hot snacks, meals and drinks from your college canteen in minutes." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="logo">🔥 Campus<span>Bites</span></div>
+    <div class="nav-right">
+      <span class="nav-meta">⏱ 15–25 min</span>
+      <button class="cart-btn" id="cart-toggle-btn" aria-label="Open cart">
+        🛒 Cart <span class="badge" id="cart-count">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGES -->
+  <main id="page-home" class="page active">
+
+    <section class="hero">
+      <div class="hero-tag">🎓 Your College Canteen, Online</div>
+      <h1>Hungry on<br><span class="accent">Campus?</span></h1>
+      <p>Order hot snacks, meals &amp; drinks from Campus Bites — ready in 15 mins!</p>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search burgers, pizza, snacks..."
+          autocomplete="off"
+        />
+        <button type="button" id="search-clear" style="display:none" aria-label="Clear search">✕</button>
+      </div>
+    </section>
+
+    <div class="stats-bar">
+      <div class="stat"><span class="stat-num">4.8★</span><span class="stat-label">Rating</span></div>
+      <div class="stat"><span class="stat-num">15 min</span><span class="stat-label">Avg Delivery</span></div>
+      <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Menu Items</span></div>
+      <div class="stat"><span class="stat-num">₹20</span><span class="stat-label">Delivery Fee</span></div>
+    </div>
+
+    <section class="section" id="menu-section">
+      <div class="section-header">
+        <h2 class="section-title">Browse Menu</h2>
+        <span class="result-count" id="result-count"></span>
+      </div>
+      <div class="cats" id="cat-buttons" role="tablist" aria-label="Menu categories"></div>
+      <div class="menu-grid" id="menu-grid"></div>
+      <p class="no-results" id="no-results" style="display:none">No items found. Try a different search.</p>
+    </section>
+
+    <footer class="site-footer">
+      <p>🔥 Campus Bites — Made with ❤️ for students</p>
+      <p>Open: 8:00 AM – 9:00 PM &nbsp;·&nbsp; Block-A Canteen, Ground Floor</p>
+    </footer>
+
+  </main>
+
+  <main id="page-checkout" class="page"></main>
+  <main id="page-success" class="page"></main>
+
+  <!-- CART PANEL -->
+  <div class="cart-overlay" id="cart-overlay" role="presentation"></div>
+  <aside class="cart-panel" id="cart-panel" role="dialog" aria-label="Shopping cart" aria-modal="true">
+    <div class="cart-header">
+      <h2>Your Order</h2>
+      <button class="close-btn" id="cart-close-btn" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-row"><span>Subtotal</span><span id="cart-subtotal">₹0</span></div>
+      <div class="cart-row muted"><span>Delivery fee</span><span>₹20</span></div>
+      <div class="cart-row total"><span>Total</span><span id="cart-grand">₹0</span></div>
+      <button class="checkout-btn" id="proceed-btn">Proceed to Checkout →</button>
+    </div>
+  </aside>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
